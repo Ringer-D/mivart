@@ -72,6 +72,8 @@
 <script>
     export default {
         name: 'NavMain',
+
+
        methods: {
          sendEvent(e) {
            this.$emit('click-button')

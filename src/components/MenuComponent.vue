@@ -1,8 +1,8 @@
 <template>
    
-    <div v-if="showing" class="menu">
+    <div class="menu">
       <p>MENU</p>
-      <a class="menu-icon" href="#">
+      <a @click.prevent="sendEvent" class="menu-icon" href="#">
         <img src="../assets/menu-rot.svg" alt="menu">
       </a>
       <img class="head" src="../assets/head.svg" alt="head">
@@ -21,12 +21,15 @@
 
 <script>
     export default {
-        props: {
-            showing: {
-                type: Boolean,
-                default: false
-            },
-        },  
+          
+
+        methods: {
+         sendEvent(e) {
+           this.$emit('click-button')
+           
+         }
+       },
+
     }
 </script>
 

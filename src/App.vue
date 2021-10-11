@@ -2,10 +2,10 @@
   
     
   <div class="first">
-    <Nav-main @click-button="showMenu(true)"/>
+    <Nav-main v-if="hiding" @click-button="showMenu(true), hideNav(false)" />
   </div>
 
-  <MenuComponent/>
+  <MenuComponent v-if="showing" @click-button="showMenu(false), hideNav(true)"/>
     
   <AboutCompany/>
 
@@ -47,14 +47,18 @@ export default {
   },
   data() {
     return {
-      showing: false
+      showing: false,
+      hiding: true
     }
   },
 
   methods: {
     showMenu(showing) {
       this.showing = showing
-      console.log(showing)
+    },
+
+    hideNav(hiding) {
+      this.hiding = hiding
     }
 
   },
