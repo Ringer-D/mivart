@@ -31,7 +31,7 @@
 
     </ul>
 
-    <a @click.prevent="showMenu" class="menu-button" href="#">
+    <a @click.prevent="sendEvent" class="menu-button" href="#">
       MENU
       <img src="../assets/menu.svg" alt="menu">
     </a>
@@ -73,7 +73,7 @@
     export default {
         name: 'NavMain',
        methods: {
-         showMenu(e) {
+         sendEvent(e) {
            this.$emit('click-button')
            
          }

@@ -1,6 +1,6 @@
 <template>
    
-    <div v-if="editing" class="menu">
+    <div v-if="showing" class="menu">
       <p>MENU</p>
       <a class="menu-icon" href="#">
         <img src="../assets/menu-rot.svg" alt="menu">
@@ -22,14 +22,11 @@
 <script>
     export default {
         props: {
-            editing: {
+            showing: {
                 type: Boolean,
                 default: false
             },
-        },
-        
-
-      
+        },  
     }
 </script>
 

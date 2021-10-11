@@ -2,7 +2,7 @@
   
     
   <div class="first">
-    <Nav-main @click-button="doEdit(true)"/>
+    <Nav-main @click-button="showMenu(true)"/>
   </div>
 
   <MenuComponent/>
@@ -47,20 +47,21 @@ export default {
   },
   data() {
     return {
-      editing: false
+      showing: false
     }
   },
 
   methods: {
-    doEdit(editing) {
-      this.editing = editing
-      console.log(this.editing)
+    showMenu(showing) {
+      this.showing = showing
+      console.log(showing)
     }
 
   },
   
-  
 }
+
+
 </script>
 
   
