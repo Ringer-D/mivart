@@ -2,11 +2,15 @@
   
     
   <div class="first">
+    <transition-group name="hide">
     <Nav-main v-if="hiding" @click-button="showMenu(true), hideNav(false)" />
+    </transition-group>
   </div>
 
-  <MenuComponent v-if="showing" @click-button="showMenu(false), hideNav(true)"/>
-    
+  <transition name="show">
+    <MenuComponent v-if="showing" @click-button="showMenu(false), hideNav(true)"/>
+  </transition>
+
   <AboutCompany/>
 
   <ImagesSection/>
@@ -76,6 +80,29 @@ export default {
     height: 100vh;
   }
 
- 
-  
+  .show-enter-active {
+    transition: all 0.5s ease-in;
+  }
+
+  .show-leave-active {
+    transition: all 0.8s ease-out;
+  }
+
+  .show-enter-from,
+  .show-leave-to {
+    transform: translateX(-50vw);
+  }
+
+  .hide-enter-active {
+    transition: all 0.8s ease-in;
+  }
+
+  .hide-leave-active {
+    transition: all 0.8s ease-out;
+  }
+
+  .hide-enter-from,
+  .hide-leave-to {
+    transform: translateY(-150px);
+  }
 </style>

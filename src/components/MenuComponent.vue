@@ -7,14 +7,26 @@
       </a>
       <img class="head" src="../assets/head.svg" alt="head">
       <div class="menu-first">
+        <a href="">
         <img src="../assets/menu-01.jpg" alt="menu">
+        </a>
+        <a href="">
         <img src="../assets/menu-02.jpg" alt="menu">
+        </a>
+        <a href="">
         <img src="../assets/menu-03.jpg" alt="menu">
+        </a>
       </div>
       <div class="menu-second">
+        <a href="">
         <img src="../assets/menu-04.jpg" alt="menu">
+        </a>
+        <a href="">
         <img src="../assets/menu-05.jpg" alt="menu">
+        </a>
+        <a href="">
         <img src="../assets/menu-06.jpg" alt="menu">
+        </a>
       </div>
     </div>
 </template>
@@ -36,6 +48,7 @@
 <style lang="scss" scoped>
 
   $mainColor: #a39475;
+  $borderColor: #d59aa4;
 
 
      .menu {
@@ -87,6 +100,13 @@
     margin-right: 100px;
     border-radius: 50%;
     border: 3px solid $mainColor;
+    opacity: .6;
+
+    &:hover {
+      border: 3px solid $borderColor;
+      opacity: 1;
+      transition: opacity .6s;
+    }
   }
 
   .menu-second {
@@ -96,6 +116,7 @@
     top: 450px;
     left: 100px;
     z-index: 114;
+    
   }
 
   .menu-second img {
@@ -104,5 +125,12 @@
     margin-right: 100px;
     border-radius: 50%;
     border: 3px solid $mainColor;
+    opacity: .6;
+
+    &:hover {
+      border: 3px solid $borderColor;
+      opacity: 1;
+      transition: opacity .6s;
+    }
   }
 </style>

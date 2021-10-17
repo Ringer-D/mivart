@@ -1,34 +1,48 @@
 <template>
   <div class="about-company">
     <article>
+
       <div class="heading">
-        <h1>O SPOLOČNOSTI</h1>
+        <h1> O SPOLOČNOSTI</h1>
         <p class="subtitle">LEONIDES</p>
         <img src="../assets/ornament.svg" alt="#">
       </div>
+
+      
       <section class="section-links">
-        <a href="#">
-          INŠPIROVANÝ HISTÓRIOU
-          <img src="../assets/menu-about-1.jpg" alt="">
-        </a>
-        <a href="#">
-          VÍZIA A POSLANIE
-          <img src="../assets/menu-about-2.jpg" alt="">
-        </a>
-        <a href="#">
-          HODNOTY LEONIDES
-          <img src="../assets/menu-about-3.jpg" alt="">
-        </a>
+
+        <transition name="show">
+          <a class="main" v-show="scrollpx > 700" href="#">
+            INŠPIROVANÝ HISTÓRIOU
+            <img src="../assets/menu-about-1.jpg" alt="">
+          </a>
+        </transition>
+        <transition name="show-second">
+          <a class="other" v-show="scrollpx > 700" href="#">
+            VÍZIA A POSLANIE
+            <img src="../assets/menu-about-2.jpg" alt="">
+          </a>
+        </transition>
+        <transition name="show-third">
+          <a class="main" v-show="scrollpx > 700" href="#">
+            HODNOTY LEONIDES
+            <img src="../assets/menu-about-3.jpg" alt="">
+          </a>
+        </transition>
+        
       </section>
+      
       <section class="section-article">
         <h2>Inšpirovaný históriou</h2>
         <p class="p-article-first">Toffee muffin cookie tart marzipan lemon drops. Chocolate cake bear claw chocolate lemon drops. Cotton candy wafer shortbread pie lemon drops jujubes chocolate cake sweet roll cake. Powder macaroon pie donut sweet roll tiramisu toffee gummies gummi bears. Gummies sesame snaps brownie wafer cotton candy. Bear claw soufflé soufflé sesame snaps gummies dessert. Ice cream tart jelly biscuit powder. Croissant cookie carrot cake soufflé jelly-o biscuit. Chocolate sweet gingerbread sweet brownie soufflé fruitcake. Halvah cake macaroon jelly tart macaroon pastry. Pie fruitcake jelly jelly-o fruitcake muffin pudding sweet. <br>  Bonbon pudding caramels cotton candy brownie. Candy dragée gingerbread chupa chups muffin jelly-o. Chupa chups chocolate cake gummi bears pastry oat cake. Cotton candy cheesecake sesame snaps lollipop marshmallow chocolate cake sweet roll soufflé. Jelly-o cupcake powder cupcake apple pie muffin. Macaroon muffin caramels dessert jelly-o croissant chocolate cake bear claw. Croissant sesame snaps muffin halvah cake candy canes gummies. Soufflé wafer muffin biscuit dessert. Cake cheesecake marzipan cookie soufflé.</p>
         <p class="p-article-second">Marshmallow chocolate gummies cake chocolate cake candy. Brownie sweet roll powder chupa chups jelly beans chocolate cake tart soufflé. Topping biscuit jelly-o gummi bears lemon drops apple pie chocolate cake oat cake. Brownie apple pie croissant lemon drops apple pie candy wafer cupcake. Brownie donut croissant jelly beans sugar plum. Cake jelly beans lemon drops caramels carrot cake pastry wafer candy muffin. Gummi bears topping toffee sugar plum tart liquorice tiramisu cookie gingerbread. Macaroon liquorice lollipop sweet roll sweet bear claw shortbread fruitcake. Liquorice fruitcake brownie halvah tootsie roll. Chocolate cake shortbread donut donut jujubes tart lemon drops cookie. Cake macaroon macaroon donut jelly-o gummi bears fruitcake. Caramels apple pie croissant croissant caramels cake cupcake apple pie dessert. Tart cheesecake danish jelly-o muffin pudding. Cake halvah cake chocolate bar pudding soufflé dragée. Jelly beans gummies wafer icing oat cake. Gummi bears tootsie roll tart muffin tiramisu cheesecake dragée sesame snaps sesame snaps. Sweet sesame snaps dragée dessert marshmallow chocolate sweet roll jujubes. Cotton candy donut carrot cake jelly-o sweet roll. Halvah carrot cake pastry brownie sweet pastry candy liquorice candy. Shortbread lollipop apple pie cake jelly marshmallow. Danish chocolate cake gummi bears liquorice muffin carrot cake tart cake pie.</p>
       </section>
+
       <section class="section-article">
         <h2>Vízia a poslanie Leonides</h2>
         <p class="p-article-third">Jelly beans cookie wafer topping croissant. Jelly-o donut halvah cheesecake gummies topping caramels sweet roll. Pastry gingerbread tootsie roll chocolate candy canes marzipan cheesecake apple pie gummies. Ice cream cake macaroon halvah toffee fruitcake croissant candy. Soufflé gummies biscuit marzipan marzipan toffee cake dessert. Soufflé sugar plum apple pie cake tart. Pastry cake danish tiramisu bonbon liquorice donut caramels. Lemon drops gummi bears tart biscuit carrot cake. Jujubes tart pudding donut dessert. Gummi bears brownie shortbread danish pie pudding. Caramels chupa chups bonbon ice cream pudding powder. Lemon drops cookie lollipop cheesecake jelly-o gummi bears sweet chocolate cake. Jelly beans soufflé croissant brownie brownie bonbon. Brownie bear claw gummi bears cotton candy powder brownie ice cream liquorice. Dragée bonbon gummi bears wafer shortbread wafer brownie donut. Gummi bears cookie icing chocolate bar dragée pastry cotton candy sweet. Fruitcake muffin cookie dessert gingerbread gummies. Cake pie chocolate icing tootsie roll pudding marzipan carrot cake fruitcake. Soufflé marshmallow sweet roll sesame snaps liquorice. Marshmallow cupcake jujubes macaroon apple pie lollipop pastry pie. Halvah danish sweet roll jelly-o pastry candy marzipan bear claw halvah. Cookie marzipan gummi bears topping jelly gingerbread cotton candy tiramisu lemon drops. Marzipan topping donut topping biscuit soufflé carrot cake pudding chupa chups.</p>
       </section>
+
       <section class="section-list">
         <h2>Hodnoty</h2>
         <ul>
@@ -42,6 +56,7 @@
           <li>Bar</li>
         </ul>
       </section>
+
       <section class="section-list">
         <h2>Stabilita a zázemie spoločnosti</h2>
         <ul>
@@ -53,6 +68,7 @@
           <li>Marzipan topping donut topping</li>
         </ul>
       </section>
+
       <img class="img-money" src="../assets/money-copy.png" alt="money">
     </article>
   </div>
@@ -60,13 +76,37 @@
 
 <script>
   export default {
-    name: 'AboutCompany'
+    name: 'AboutCompany',
+
+    data() {
+      return {
+        scrollpx: 0,
+        
+      }
+    },
+
+    methods: {
+      handleScroll() {
+        this.scrollpx = window.scrollY;
+      }
+    },
+
+    created() {
+      window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed() {
+      window.removeEventListener('scroll', this.handleScroll);
+    }
+   
+    
   }
 </script>
 
 <style lang="scss" scoped>
 
 $mainColor: #a39475;
+$borderMainColor: #0f0fc7;
+$borderOtherColor: #d59aa4;
 
 
   .about-company {
@@ -86,18 +126,41 @@ $mainColor: #a39475;
       flex-direction: row;
       justify-content: space-evenly;
       margin-bottom: 100px;
-    
+
+      img {
+        border-bottom: 3px solid $mainColor;
+      }
+
+      .main img:hover {
+        border-bottom: 3px solid $borderMainColor;
+      }
+
+      .other img:hover {
+        border-bottom: 3px solid $borderOtherColor;
+      }
+
       a {
         display: flex;
         flex-direction: column;
         text-decoration: none;
         font-weight: bold;
         color: $mainColor;
+        opacity: .6;
 
-        
+        &:hover {
+          opacity: 1;
+          transition: opacity .6s;
+        }        
 
       }
 
+      .main:hover {
+        color: $borderMainColor;
+      }
+
+      .other:hover {
+        color: $borderOtherColor;
+      }
     
     }
 
@@ -159,6 +222,28 @@ $mainColor: #a39475;
     margin: -265px 0 0 350px;
   }
 
-  
+  .show-enter-active {
+    transition: all 0.4s ease-in;
+  }
+
+  .show-enter-from {
+    transform: translateY(50vh);
+  }
+
+  .show-second-enter-active {
+    transition: all 0.7s ease-in;
+  }
+
+  .show-second-enter-from {
+    transform: translateY(50vh);
+  }
+
+  .show-third-enter-active {
+    transition: all 1s ease-in;
+  }
+
+  .show-third-enter-from {
+    transform: translateY(50vh);
+  }
 
 </style>

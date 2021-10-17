@@ -20,7 +20,7 @@
         display: block;
         position: relative;
         top: 0; 
-        left: -133px;  
+        left: -142px;  
         width: auto;
         height: 1000px;
         z-index: 13;

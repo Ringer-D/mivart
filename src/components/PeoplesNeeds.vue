@@ -7,34 +7,46 @@
                 <img src="../assets/ornament.svg" alt="#">
             </div>
             <section class="section-links">
-                <a href="#">
-                DETI
-                <svg>
-                    <line x1="35" y1="0" x2="65" y2="0" stroke="#a39475" />
-                </svg>
-                <img class="img-link" src="../assets/menu-need-1.jpg" alt="">
+
+              <transition name="show">
+                <a v-show="scrollpx > 6500" class="main" href="#">
+                  DETI
+                  <svg>
+                      <line x1="35" y1="0" x2="65" y2="0" />
+                  </svg>
+                  <img class="img-link" src="../assets/menu-need-1.jpg" alt="">
                 </a>
-                <a href="#">
-                BÝVANIE
-                <svg>
-                    <line x1="35" y1="0" x2="65" y2="0" stroke="#a39475" />
-                </svg>
-                <img class="img-link" src="../assets/menu-need-2.jpg" alt="">
+              </transition>
+
+              <transition name="show-second">
+                <a v-show="scrollpx > 6500" class="other" href="#">
+                  BÝVANIE
+                  <svg>
+                      <line x1="35" y1="0" x2="65" y2="0" />
+                  </svg>
+                  <img class="img-link" src="../assets/menu-need-2.jpg" alt="">
                 </a>
-                <a href="#">
-                SPORENIE
-                <svg>
-                    <line x1="35" y1="0" x2="65" y2="0" stroke="#a39475" />
-                </svg>
-                <img class="img-link" src="../assets/menu-need-3.jpg" alt="">
+              </transition>
+
+              <transition name="show-third">
+                <a v-show="scrollpx > 6500" class="main" href="#">
+                  SPORENIE
+                  <svg>
+                      <line x1="35" y1="0" x2="65" y2="0" />
+                  </svg>
+                  <img class="img-link" src="../assets/menu-need-3.jpg" alt="">
                 </a>
-                <a href="#">
-                DôCHODOK
-                <svg>
-                    <line x1="35" y1="0" x2="65" y2="0" stroke="#a39475" />
-                </svg>
-                <img class="img-link" src="../assets/menu-need-4.jpg" alt="">
+              </transition>
+
+              <transition name="show-fourth">
+                <a v-show="scrollpx > 6500" class="other" href="#">
+                  DôCHODOK
+                  <svg>
+                      <line x1="35" y1="0" x2="65" y2="0" />
+                  </svg>
+                  <img class="img-link" src="../assets/menu-need-4.jpg" alt="">
                 </a>
+              </transition>
             </section>
             <section class="section-article">
                 <p class="p-article-first">Toffee muffin cookie tart marzipan lemon drops. Chocolate cake bear claw chocolate lemon drops. Cotton candy wafer shortbread pie lemon drops jujubes chocolate cake sweet roll cake. Powder macaroon pie donut sweet roll tiramisu toffee gummies gummi bears. Gummies sesame snaps brownie wafer cotton candy. Bear claw soufflé soufflé sesame snaps gummies dessert. Ice cream tart jelly biscuit powder. Croissant cookie carrot cake soufflé jelly-o biscuit. Chocolate sweet gingerbread sweet brownie soufflé fruitcake. Halvah cake macaroon jelly tart macaroon pastry. Pie fruitcake jelly jelly-o fruitcake muffin pudding sweet. Bonbon pudding caramels cotton candy brownie. Candy dragée gingerbread chupa chups muffin jelly-o. Chupa chups chocolate cake gummi bears pastry oat cake. Cotton candy cheesecake sesame snaps lollipop marshmallow chocolate cake sweet roll soufflé. Jelly-o cupcake powder cupcake apple pie muffin. Macaroon muffin caramels dessert jelly-o croissant chocolate cake bear claw. Croissant sesame snaps muffin halvah cake candy canes gummies. Soufflé wafer muffin biscuit dessert. Cake cheesecake marzipan cookie soufflé.</p>
@@ -68,16 +80,39 @@
 
 <script>
     export default {
-        name: 'PeoplesNeeds'
+      name: 'PeoplesNeeds',
+
+      data() {
+        return {
+          scrollpx: 0,
+        
+        }
+      },
+
+      methods: {
+        handleScroll() {
+          this.scrollpx = window.scrollY;
+        }
+      },
+
+      created() {
+        window.addEventListener('scroll', this.handleScroll);
+      },
+      destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+      }
+
     }
 </script>
 
 <style lang="scss" scoped>
 
   $mainColor:#a39475;
+  $borderMainColor: #0f0fc7;
+  $borderOtherColor: #d59aa4;
 
 
-    .needs {
+  .needs {
     background: url('../assets/bg-needs.svg') no-repeat;
     background-size: cover;
     position: relative;
@@ -118,26 +153,13 @@
     height: auto;
   }
 
-  .img-link {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    border: 3px solid $mainColor;
-    margin-top: 50px;
-  }
-
   .section-links {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 100px;
-  }
 
-  .section-list {
-      margin-bottom: 100px;
-  }
-
-  a {
+    a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,13 +168,55 @@
     font-weight: bold;
     margin: 0 20px 0 20px;
     color: $mainColor;
-  }
+    opacity: .6;
 
-  svg {
+      &:hover {
+        opacity: 1;
+        transition: opacity .6s;
+      }
+    }
+
+    .main:hover {
+      color: $borderMainColor;
+      svg {
+        stroke: $borderMainColor;
+      }
+    }
+
+    .other:hover {
+      color: $borderOtherColor;
+      svg {
+        stroke: $borderOtherColor;
+      }
+    }
+
+    svg {
     width: 100px;
     height: 10px;
     stroke-width: 5px;
     margin-top: 10px;
+    stroke: $mainColor;
+    }
+
+    .img-link {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid $mainColor;
+    margin-top: 50px;
+    }
+
+    .main .img-link:hover {
+      border: 3px solid $borderMainColor;
+    }
+
+    .other .img-link:hover {
+      border: 3px solid $borderOtherColor;
+    }
+  }
+
+  .section-list {
+      margin-bottom: 100px;
   }
 
   .p-list {
@@ -178,5 +242,37 @@
 
   iframe {
     width: 98.9vw;
+  }
+
+  .show-enter-active {
+    transition: all 0.4s ease-in;
+  }
+
+  .show-enter-from {
+    transform: translateY(50vh);
+  }
+
+  .show-second-enter-active {
+    transition: all 0.7s ease-in;
+  }
+
+  .show-second-enter-from {
+    transform: translateY(50vh);
+  }
+
+  .show-third-enter-active {
+    transition: all 1s ease-in;
+  }
+
+  .show-third-enter-from {
+    transform: translateY(50vh);
+  }
+
+  .show-fourth-enter-active {
+    transition: all 1.3s ease-in;
+  }
+
+  .show-fourth-enter-from {
+    transform: translateY(50vh);
   }
 </style>
